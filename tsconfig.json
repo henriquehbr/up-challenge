@@ -1,0 +1,20 @@
+{
+	"include": ["src/**/*"],
+	"exclude": ["node_modules/*"],
+	"compilerOptions": {
+		/* Basic Options */
+		"target": "esnext",
+		"module": "esnext",
+		"removeComments": true,
+
+		/* Strict Type-Checking Options */
+		"strict": true,
+		"types": ["svelte"],
+
+		/* Module Resolution Options */
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"baseUrl": "./src"
+	}
+}
