@@ -11,6 +11,7 @@
 </script>
 
 <script lang="typescript">
+	import Button from 'components/Button'
 	import Scenario from 'components/Scenario'
 	import Player from 'components/Player'
 
@@ -18,6 +19,7 @@
 </script>
 
 {#if playable}
+	<Button icon>⏸</Button>
 	<Scenario>
 		<Player />
 	</Scenario>

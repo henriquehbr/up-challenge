@@ -8,8 +8,8 @@
 <style lang="less">
 	div {
 		position: fixed;
-		width: 100vh;
-		height: 100%;
+		width: 100vw;
+		height: 100vh;
 		background-color: rgba(0, 0, 0, 0.5);
 		opacity: 0;
 		animation: fadeIn 0.5s forwards;

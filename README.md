@@ -1,6 +1,6 @@
 # upnid-challenge
 
-> Desafio técnico para Desenvolvedor Front-End na Upnid
+> Desafio técnico para desenvolvedor Front-End na Upnid
 
 ## Índice
 

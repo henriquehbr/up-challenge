@@ -95,5 +95,7 @@
 	<h1>UpChallenge</h1>
 	<Button on:click={startGame}>Jogar</Button>
 	<Button on:click={() => (opened = true)}>Sobre</Button>
-	<Modal bind:opened title="Sobre">Lorem ipsum dolor sit amet consectetur</Modal>
+	<Modal bind:opened title="Sobre">
+		Desafio técnico para desenvolvedor Front-End na Upnid
+	</Modal>
 </main>
