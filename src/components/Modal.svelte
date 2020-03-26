@@ -12,6 +12,7 @@
 		height: 100vh;
 		background-color: rgba(0, 0, 0, 0.5);
 		opacity: 0;
+		z-index: 2;
 		animation: fadeIn 0.5s forwards;
 	}
 
@@ -27,6 +28,7 @@
 		border: 3px solid white;
 		box-shadow: 6px 6px 0 2px rgba(0, 0, 0, 0.5);
 		overflow-y: auto;
+		z-index: 3;
 
 		&:before {
 			content: '';

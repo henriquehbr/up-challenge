@@ -1,14 +1,11 @@
 <script lang="typescript">
-	import { get } from 'svelte/store'
-	import { GlobalStore } from 'components/Game'
+	export let road = 1
 
-	let { player, playerRoadIndex, playerMovingHorizontally, playerVerticalPosition, roadsHorizontalCoordinates } = get(
-		GlobalStore
-	)
-
-	let playerRoad: string | number
-
-	$: playerRoad = roadsHorizontalCoordinates[playerRoadIndex]
+	let player: HTMLElement
+	let playerMovingHorizontally: boolean
+	let playerMovingVertically: boolean
+	let playerVerticalPosition = [1, 'vw']
+	let roadsHorizontalCoordinates = ['-12.5vw', '0', '12.5vw']
 
 	const sleep = async (ms: number, callback: Function) => await new Promise(resolve => setTimeout(callback, ms))
 
@@ -19,7 +16,7 @@
 		}
 		if (!playerMovingHorizontally) {
 			playerMovingHorizontally = true
-			;(key === 'ArrowLeft' && playerRoadIndex--) || (key === 'ArrowRight' && playerRoadIndex++)
+			;(key === 'ArrowLeft' && road--) || (key === 'ArrowRight' && road++)
 			player!.classList.add('turning')
 			sleep(250, () => (playerMovingHorizontally = false))
 		}
@@ -88,7 +85,12 @@
 
 		.tire {
 			position: absolute;
-			background: linear-gradient(to bottom, rgba(14, 14, 14, 1) 1%, rgba(50, 50, 50, 1) 50%, rgba(14, 14, 14, 1) 99%);
+			background: linear-gradient(
+				to bottom,
+				rgba(14, 14, 14, 1) 1%,
+				rgba(50, 50, 50, 1) 50%,
+				rgba(14, 14, 14, 1) 99%
+			);
 			border-radius: 24px;
 			width: 30%;
 			height: 35%;
@@ -121,7 +123,10 @@
 
 <svelte:window on:keydown={handleControls} />
 
-<div class="car" bind:this={player} style="--car-road: {playerRoad}; --car-y: {playerVerticalPosition.join('')}">
+<div
+	class="car"
+	bind:this={player}
+	style="--car-road: {roadsHorizontalCoordinates[road]}; --car-y: {playerVerticalPosition.join('')}">
 	<div class="tire" />
 	<div class="tire" />
 	<div class="tire" />

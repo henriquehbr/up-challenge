@@ -26,8 +26,6 @@
 			padding: 0;
 			width: 52px;
 			height: 52px;
-			left: 16px;
-			top: 16px;
 		}
 
 		&:hover {
@@ -41,6 +39,6 @@
 	}
 </style>
 
-<button class:icon on:click={() => dispatch('click')}>
+<button class:icon {...$$props} on:click={() => dispatch('click')}>
 	<slot />
 </button>

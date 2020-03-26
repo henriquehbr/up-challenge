@@ -1,3 +1,7 @@
+<script lang="typescript">
+	export let paused = false
+</script>
+
 <style lang="less">
 	.grass {
 		display: flex;
@@ -6,6 +10,13 @@
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
+		z-index: -1;
+
+		&.paused {
+			&:before, &:after, .road:before, .road:after {
+				animation: none !important;
+			}
+		}
 
 		&:before,
 		&:after {
@@ -47,7 +58,7 @@
 	}
 </style>
 
-<div class="grass">
+<div class:paused class="grass">
 	<div class="road">
 		<slot />
 	</div>
