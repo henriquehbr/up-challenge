@@ -7,12 +7,12 @@ export default {
 	output: {
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'dist/build/bundle.js'
 	},
 	plugins: [
 		require('rollup-plugin-svelte')({
 			dev: !production,
-			css: css => css.write('public/build/bundle.css', false),
+			css: css => css.write('dist/build/bundle.css', false),
 			preprocess: require('svelte-preprocess')({
 				typescript: {
 					transpileOnly: true
@@ -30,15 +30,14 @@ export default {
 		require('@rollup/plugin-alias')({
 			entries: {
 				components: path.resolve(__dirname, 'src', 'components'),
-				assets: path.resolve(__dirname, 'public', 'assets')
+				assets: path.resolve(__dirname, 'dist', 'assets')
 			}
 		}),
 		require('@rollup/plugin-typescript')(),
 		require('@rollup/plugin-commonjs')(),
-		require('rollup-plugin-bundle-size')(),
-		production && require('rollup-plugin-brotli')({ additional: ['public/build/bundle.css'] }),
-		!production && require('rollup-plugin-serve')('public'),
-		!production && require('rollup-plugin-livereload')('public'),
+		//require('rollup-plugin-bundle-size')(),
+		!production && require('rollup-plugin-serve')('dist'),
+		!production && require('rollup-plugin-livereload')('dist'),
 		require('rollup-plugin-terser').terser()
 	]
 }

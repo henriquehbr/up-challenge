@@ -64,7 +64,7 @@ $ npm run start
 
 ## Detalhes técnicos
 
-A stack utilizada para o desenvolvmento do projeto é composta pelo framework [Svelte](https://svelte.dev) juntamente com [TypeScript](https://typescriptlang.org) e [Less.js](https://lesscss.org) para a estilização dos componentes
+A stack utilizada para o desenvolvmento do projeto é composta pelo framework [Svelte](https://svelte.dev), a empacotador de módulos [Rollup](https://rollupjs.org) juntamente com [TypeScript](https://typescriptlang.org) e [Less.js](https://lesscss.org) para a estilização dos componentes
 
 ### Por que?
 
@@ -75,6 +75,12 @@ A stack utilizada para o desenvolvmento do projeto é composta pelo framework [S
 O Svelte é uma nova abordagem radical para criar interfaces de usuário. Enquanto estruturas tradicionais como React e Vue realizam a maior parte de seu trabalho no navegador, o Svelte muda esse trabalho para uma etapa de compilação que acontece quando você cria seu aplicativo.
 
 Em vez de usar técnicas como a diferenciação virtual do DOM, o Svelte escreve um código que atualiza cirurgicamente o DOM quando o estado do seu aplicativo é alterado.
+
+- Rollup
+
+> *"Empacotador de módulos ECMAScript da próxima geração"*
+
+O Rollup é um empacotador de módulo para JavaScript que compila pequenos pedaços de código em algo maior e mais complexo, como uma biblioteca ou aplicativo. Ele usa o novo formato padronizado para módulos de código incluídos na revisão ES6 do JavaScript, em vez de soluções idiossincráticas anteriores, como CommonJS e AMD. Os módulos ES permitem combinar de forma livre e transparente as funções individuais mais úteis das suas bibliotecas favoritas. Eventualmente, isso será possível de forma nativa em qualquer lugar, mas o Rollup permite fazer isso hoje.
 
 - TypeScript
 
