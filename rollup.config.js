@@ -35,7 +35,7 @@ export default {
 		}),
 		require('@rollup/plugin-typescript')(),
 		require('@rollup/plugin-commonjs')(),
-		//require('rollup-plugin-bundle-size')(),
+		require('rollup-plugin-bundle-size')(),
 		!production && require('rollup-plugin-serve')('dist'),
 		!production && require('rollup-plugin-livereload')('dist'),
 		require('rollup-plugin-terser').terser()

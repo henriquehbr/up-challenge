@@ -16,7 +16,7 @@
 		}
 		if (!playerMovingHorizontally) {
 			playerMovingHorizontally = true
-			;(key === 'ArrowLeft' && road--) || (key === 'ArrowRight' && road++)
+			;(key === 'ArrowLeft' && road > 0 && road--) || (key === 'ArrowRight' && road < 2 && road++)
 			player!.classList.add('turning')
 			sleep(250, () => (playerMovingHorizontally = false))
 		}

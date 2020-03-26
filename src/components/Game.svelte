@@ -39,8 +39,8 @@
 {#if playable}
 	<Modal bind:opened={paused} title="Pausado">Clique em "OK" para continuar</Modal>
 	<Button on:click={() => paused = true} data-pause icon>⏸</Button>
-	<Button on:click={() => road--} data-left icon>⬅️</Button>
-	<Button on:click={() => road++} data-right icon>➡️</Button>
+	<Button on:click={() => road > 0 && road--} data-left icon>⬅️</Button>
+	<Button on:click={() => road < 2 && road++} data-right icon>➡️</Button>
 	<Scenario {paused}>
 		<Player bind:road />
 	</Scenario>
